@@ -35,6 +35,8 @@ ts_steps <- ts(steps_day_mean)
 plot(ts_steps[!is.na(ts_steps)], type = "l", main= "The average number of steps taken", xlab= "days", ylab= "average")
 ```
 
+![plot of chunk sample_panelplot](instructions_fig/4-ts.png)
+
 The 5-minute interval that, on average, contains the maximum number of steps
 ```{r, echo=TRUE}
 interval_5_minute <- which.max(tapply(mydata$steps, mydata$interval, mean, na.rm= TRUE))
