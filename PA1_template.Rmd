@@ -26,10 +26,26 @@ median(steps_day)
 
 ## What is the average daily activity pattern?
 
+Time series plot of the average number of steps taken
+```{r, echo=TRUE}
+steps_day_mean <- tapply(mydata$steps, mydata$date, mean, na.rm= TRUE)
+ts_steps <- ts(steps_day_mean)
+plot(ts_steps[!is.na(ts_steps)], type = "l", main= "The average number of steps taken", xlab= "days", ylab= "average")
+```
 
+The 5-minute interval that, on average, contains the maximum number of steps
+```{r, echo=TRUE}
+interval_5_minute <- which.max(tapply(mydata$steps, mydata$interval, mean, na.rm= TRUE))
+names(interval_5_minute)
+```
 
 ## Imputing missing values
 
+Code to describe and show a strategy for imputing missing data
+```{r, echo=TRUE}
+index_missing<- which(is.na(mydata))
+length(index_missing)
+```
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
