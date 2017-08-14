@@ -4,6 +4,8 @@ autor: "Brenda Rodriguez"
 output: html_document
 ---
 
+### Reproducible Research: Peer Assessment 1
+
 ## Loading and preprocessing the data
 
 mydata = read.csv("activity.csv", header= TRUE)
