@@ -18,6 +18,8 @@ steps_day <- tapply(mydata$steps, mydata$date, sum, na.rm=TRUE)
 hist(steps_day, main= "The total number of steps taken each day", xlab = "Steps")
 ```
 
+![plot of chunk sample_panelplot](instructions_fig/sample_panelplot.png) 
+
 Mean and median number of steps taken each day
 ```{r, echo=TRUE}
 mean(steps_day)
