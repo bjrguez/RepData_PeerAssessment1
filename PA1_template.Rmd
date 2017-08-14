@@ -47,5 +47,24 @@ index_missing<- which(is.na(mydata))
 length(index_missing)
 ```
 
+Histogram of the total number of steps taken each day after missing values are imputed
+```{r, echo=TRUE}
+hist(steps_day[!is.na(steps_day)])
+```
+
 
 ## Are there differences in activity patterns between weekdays and weekends?
+
+Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends
+```{r, echo=TRUE}
+mydata$dia_semana <- weekdays(as.Date(mydata$date))
+mydata$grupo <- ifelse(mydata$dia_semana %in% c("Saturday", "Sunday"), "weekend", "weekday")
+
+weekend_mean <- tapply(mydata$steps[mydata$grupo == "weekend"], mydata$interval[mydata$grupo == "weekend"], mean, na.rm= TRUE)
+weekday_mean <- tapply(mydata$steps[mydata$grupo == "weekday"], mydata$interval[mydata$grupo == "weekday"], mean, na.rm= TRUE)
+
+par(mfrow= c(2, 1))
+plot(weekend_mean, main= "average # of steps in weekend", ylab= "average # of steps", xlab= "interval", xlim= c(0, 300), ylim= c(0, 250))
+plot(weekday_mean, main= "average # of steps in weekday", ylab= "average # of steps", xlab= "interval", xlim= c(0, 300), ylim= c(0, 250))
+```
+
