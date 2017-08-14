@@ -14,8 +14,6 @@ steps_day <- tapply(mydata$steps, mydata$date, sum, na.rm=TRUE)
 hist(steps_day, main= "The total number of steps taken each day", xlab = "Steps")
 ```
 
-![plot of chunk sample_panelplot](instructions_fig/2-hist.png) 
-
 Mean and median number of steps taken each day
 ```{r, echo=TRUE}
 mean(steps_day)
@@ -30,8 +28,6 @@ steps_day_mean <- tapply(mydata$steps, mydata$date, mean, na.rm= TRUE)
 ts_steps <- ts(steps_day_mean)
 plot(ts_steps[!is.na(ts_steps)], type = "l", main= "The average number of steps taken", xlab= "days", ylab= "average")
 ```
-
-![plot of chunk sample_panelplot](instructions_fig/4-ts.png)
 
 The 5-minute interval that, on average, contains the maximum number of steps
 ```{r, echo=TRUE}
@@ -55,7 +51,6 @@ index_na= which(is.na(steps_day_na))
 steps_day_na[index_na] <- mean_na
 hist(steps_day_na, main = "The total number of steps taken each day after missing values are imputed", xlab= "interval")
 ```
-![plot of chunk sample_panelplot](instructions_fig/7-histogram.png)
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -71,4 +66,3 @@ par(mfrow= c(2, 1))
 plot(weekend_mean, main= "average # of steps in weekend", ylab= "average # of steps", xlab= "interval", xlim= c(0, 300), ylim= c(0, 250))
 plot(weekday_mean, main= "average # of steps in weekday", ylab= "average # of steps", xlab= "interval", xlim= c(0, 300), ylim= c(0, 250))
 ```
-![plot of chunk sample_panelplot](instructions_fig/8-plot.png)
