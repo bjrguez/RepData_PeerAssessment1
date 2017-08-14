@@ -39,7 +39,7 @@ The 5-minute interval that, on average, contains the maximum number of steps
 interval_5_minute <- which.max(tapply(mydata$steps, mydata$interval, mean, na.rm= TRUE))
 names(interval_5_minute)
 ```
-[1] "835"
+the 835-th interval is the max
 
 ## Imputing missing values
 
@@ -48,7 +48,7 @@ Code to describe and show a strategy for imputing missing data
 index_missing<- which(is.na(mydata))
 length(index_missing)
 ```
-[1] 2304
+the data have 2304 missing values, these were filled with the mean of the steps
 
 Histogram of the total number of steps taken each day after missing values are imputed
 ```{r, echo=TRUE}
@@ -63,7 +63,9 @@ median(steps_day_na)
 ```
 ![plot of chunk sample_panelplot](instructions_fig/7-histogram.png)
 
-mean 10766.19
+the data have 2304 missing values, these were filled with the mean of the steps
+
+mean 10766.19 both higher the original data set
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
