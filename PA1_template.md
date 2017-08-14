@@ -54,6 +54,9 @@ mean_na <- mean(steps_day_na[!is.na(steps_day_na)])
 index_na= which(is.na(steps_day_na))
 steps_day_na[index_na] <- mean_na
 hist(steps_day_na, main = "The total number of steps taken each day after missing values are imputed", xlab= "interval")
+
+mean(steps_day_na)
+median(steps_day_na)
 ```
 ![plot of chunk sample_panelplot](instructions_fig/7-histogram.png)
 
