@@ -21,6 +21,7 @@ Mean and median number of steps taken each day
 mean(steps_day)
 median(steps_day)
 ```
+mean 9354.23 y median 10395
 
 ## What is the average daily activity pattern?
 
@@ -38,6 +39,7 @@ The 5-minute interval that, on average, contains the maximum number of steps
 interval_5_minute <- which.max(tapply(mydata$steps, mydata$interval, mean, na.rm= TRUE))
 names(interval_5_minute)
 ```
+[1] "835"
 
 ## Imputing missing values
 
@@ -46,6 +48,7 @@ Code to describe and show a strategy for imputing missing data
 index_missing<- which(is.na(mydata))
 length(index_missing)
 ```
+[1] 2304
 
 Histogram of the total number of steps taken each day after missing values are imputed
 ```{r, echo=TRUE}
@@ -59,6 +62,8 @@ mean(steps_day_na)
 median(steps_day_na)
 ```
 ![plot of chunk sample_panelplot](instructions_fig/7-histogram.png)
+
+mean 10766.19
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
