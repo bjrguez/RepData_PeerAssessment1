@@ -1,10 +1,8 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
+autor: "Brenda Rodriguez"
+output: html_document
 ---
-
 
 ## Loading and preprocessing the data
 
