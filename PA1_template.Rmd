@@ -55,7 +55,7 @@ Histogram of the total number of steps taken each day after missing values are i
 ```{r, echo=TRUE}
 hist(steps_day[!is.na(steps_day)])
 ```
-
+![plot of chunk sample_panelplot](instructions_fig/7-hist.png)
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -71,4 +71,4 @@ par(mfrow= c(2, 1))
 plot(weekend_mean, main= "average # of steps in weekend", ylab= "average # of steps", xlab= "interval", xlim= c(0, 300), ylim= c(0, 250))
 plot(weekday_mean, main= "average # of steps in weekday", ylab= "average # of steps", xlab= "interval", xlim= c(0, 300), ylim= c(0, 250))
 ```
-
+![plot of chunk sample_panelplot](instructions_fig/8-plot.png)
